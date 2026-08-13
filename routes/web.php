@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\Sheets\Facades\Sheets;
 
 Route::get('/', function () {
-    return view('posts.index');
+    $post = Sheets::collection('posts')->all();
+    return view('posts.index', ['post'=> $post]);
 });
 
 
