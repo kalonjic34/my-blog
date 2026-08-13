@@ -8,14 +8,15 @@
 </head>
 <body>
     <h1>My personal blog</h1>
+    @if ($spot ->count())
+        
     <ul>
+        @foreach ($posts as $post)
             <li>
-        <a href="/post/1">Post One</a>
+        <a href="/post/{{%$post ->slug%}}">{{ $post -> $slug}}</a>
     </li>
-    <li>
-        <a href="/post/2">Post Two</a>
-    </li>
+    @endforeach
     </ul>
-
+@endif
 </body>
 </html>
