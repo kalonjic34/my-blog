@@ -11,6 +11,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/posts/{post}', function ($post) {
+Route::get('/posts/{post}', function ($slug) {
+    $post = Sheets::collection('posts')->all()->where('slug',$slug)->first();
+    
+    abort_if(is_null($post),404);
     return view('posts.show', ['post' => $post]);
 });
