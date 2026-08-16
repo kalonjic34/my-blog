@@ -8,12 +8,12 @@
 </head>
 <body>
     <h1>My personal blog</h1>
-    @if ($spot ->count())
+    @if ($posts ->count())
         
     <ul>
         @foreach ($posts as $post)
             <li>
-        <a href="/post/{{%$post ->slug%}}">{{ $post -> $slug}}</a>
+        <a href="/posts/{{$post ->slug}}">{{ $post -> slug}}</a>
     </li>
     @endforeach
     </ul>
