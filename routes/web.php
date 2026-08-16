@@ -17,3 +17,5 @@ Route::get('/posts/{post}', function ($slug) {
     abort_if(is_null($post),404);
     return view('posts.show', ['post' => $post]);
 });
+
+Route::view('/test','app-layout');
